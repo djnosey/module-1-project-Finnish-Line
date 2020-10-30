@@ -151,6 +151,16 @@ html {
   height: 60px;
 }
 
+.homeimagecontainer {
+  display: flex;
+}
+
+.homeimage {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto;
+}
+
 #navbarmenu {
   display: none;
 }
@@ -174,6 +184,15 @@ html {
   width: 100vw;
   flex-direction: column;
   background-image: url("../images/tapio-haaja-JYE2kKoG6jw-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 740px;
+}
+.imageheader3 {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background-image: url("../images/srikanta-h-u-TrGVhbsUf40-unsplash.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 740px;
