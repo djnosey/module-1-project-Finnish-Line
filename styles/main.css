@@ -133,6 +133,8 @@ html {
   font-family: "Roboto Mono", monospace;
 }
 
+/*NAVBAR STYLES BEGIN*/
+
 #navbar {
   position: fixed;
   background-color: white;
@@ -141,9 +143,6 @@ html {
   align-items: center;
   width: 100%;
   height: 60px;
-  -webkit-box-shadow: 0px 10px 88px -41px rgba(209, 209, 209, 1);
-  -moz-box-shadow: 0px 10px 88px -41px rgba(209, 209, 209, 1);
-  box-shadow: 0px 10px 88px -41px rgba(209, 209, 209, 1);
 }
 
 #logoimage {
@@ -160,12 +159,16 @@ html {
   margin-right: 20px;
 }
 
+/*NAVBAR STYLES END*/
+
+/*MAIN IMAGES STYLE BEGINS*/
+
 .imageheader {
   display: flex;
   width: 100vw;
   flex-direction: column;
   background-image: url("../images/miikka-luotio-3SDVrlAP1Uo-unsplash.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 740px;
@@ -175,7 +178,7 @@ html {
   width: 100vw;
   flex-direction: column;
   background-image: url("../images/tapio-haaja-JYE2kKoG6jw-unsplash.jpg");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 
   background-repeat: no-repeat;
@@ -197,8 +200,7 @@ html {
   justify-content: center;
   align-items: center;
   color: white;
-
-  border-radius: 8px;
+  box-sizing: content-box;
   width: 80%;
   margin: auto 15px auto 15px;
   padding: 20px;
@@ -216,6 +218,7 @@ html {
 }
 
 .imageheaderbutton {
+  margin-top: 50px;
   font-family: "Roboto Mono", monospace;
   font-weight: 400;
   box-sizing: content-box;
@@ -223,11 +226,12 @@ html {
   background-color: white;
   color: black;
   padding: 10px 30px;
+  border: none;
   border-radius: 3px;
+  box-sizing: border-box;
 }
 
 .imageheaderbutton:hover {
-  margin-top: 50px;
   background-color: rgba(209, 209, 209, 0);
   color: white;
   padding: 10px 30px;
@@ -236,12 +240,18 @@ html {
 }
 
 .hometextcontainer {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto 0 auto;
   text-align: center;
 }
 
 .hometextcontainer > h4 {
   font-weight: 400;
+  font-size: 1.4rem;
   color: chocolate;
 }
 
@@ -250,12 +260,138 @@ html {
   margin-bottom: 20px;
 }
 
-.homeimagecontainer {
-  display: flex;
-}
+/*MAIN IMAGES STYLE ENDS*/
 
-.homeimage {
+/*LOWER IMAGES STYLE BEGINS*/
+
+#homeimagecontainer {
   width: 80vw;
   height: 200px;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/f7fed23723e8f63f9ce41ab358c9b38f.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
+
+#homeimagecontainer > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+#homeimagecontainer2 {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/97.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#homeimagecontainer2 > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+#homeimagecontainer3 {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/moomins.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#homeimagecontainer3 > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+#homeimagecontainer4 {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/lakes.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#homeimagecontainer4 > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+#homeimagecontainer5 {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/Main\ marimekko.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#homeimagecontainer5 > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+#homeimagecontainer6 {
+  width: 80vw;
+  height: 200px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/finlandiaVodka.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#homeimagecontainer6 > p {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 7px;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: white;
+}
+
+/*LOWER IMAGES STYLE ENDS*/
