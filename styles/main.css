@@ -136,8 +136,8 @@ html {
 /*NAVBAR STYLES BEGIN*/
 
 #navbar {
-  position: fixed;
-  background-color: white;
+  color: chocolate;
+  background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -145,9 +145,9 @@ html {
   height: 60px;
 }
 
-#logoimage {
-  width: 60px;
-  height: 60px;
+#navbar p {
+  margin-left: 10px;
+  font-weight: 400;
 }
 
 #navbarmenu {
@@ -190,7 +190,7 @@ html {
   display: flex;
   width: 100vw;
   flex-direction: column;
-  background-image: url("../images/miikka-luotio-3SDVrlAP1Uo-unsplash.jpg");
+  background-image: url("../images/tom-brunberg-nZ9wWG8jRTQ-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -448,7 +448,15 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   justify-content: center;
+}
+
+#searchsectioncontainer > p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 #buttonscontainer {
@@ -457,41 +465,57 @@ html {
 }
 
 .eventbutton {
-  background-color: chocolate;
+  text-align: center;
+  background-color: white;
+  font-family: "Roboto Mono";
   box-sizing: content-box;
-  border: none;
+  border: 1px solid chocolate;
   border-radius: 6px;
-  width: 60px;
-  color: white;
-  margin: 10px;
-  padding: 20px;
-  -webkit-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  width: 90px;
+  color: chocolate;
+  margin: 10px 5px;
+  padding: 10px;
+}
+
+#searchbutton {
+  margin-top: 20px;
+  width: 80vw;
+  height: 15px;
+  padding: 10px;
 }
 
 .searchinput {
+  color: chocolate;
   border: 0;
+  border-radius: 3px;
   height: 30px;
-  background-color: none;
+  background-color: rgba(255, 255, 255, 0);
   border-bottom: 1px solid chocolate;
   outline: 0;
-  height: 20px;
-  width: 300px;
+  height: 30px;
+  width: 250px;
   margin: 20px auto;
 }
 
+.searchinput::placeholder {
+  color: white;
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+#searchinput1::placeholder {
+  color: chocolate;
+  font-size: 1rem;
+}
 .resultsitemcontainer {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80vw;
   justify-content: center;
   align-items: center;
   margin: 20px auto;
-  -webkit-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
-  padding: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid chocolate;
 }
 
 .resultsitem {
@@ -503,9 +527,9 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 200px;
   margin: 0 auto 10px auto;
-  width: 100%;
+  width: 80vw;
 }
 
 .resultsitem > h3 {
@@ -523,7 +547,10 @@ html {
 .resultsitemcontainer a {
   padding: 10px 10px 20px 10px;
   margin-bottom: 5px;
+  color: chocolate;
+  text-decoration: none;
 }
+
 /*DASHBOARD SEARCH AREA ENDS*/
 
 /*DASHBOARD PAGE SPECIFIC STYLES END*/
@@ -536,7 +563,7 @@ html {
 
 .questioncontainer {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .question {
@@ -544,17 +571,15 @@ html {
   width: fit-content;
   border-radius: 15px;
   padding: 10px;
-  background-color: chocolate;
-  color: white;
+  color: chocolate;
 }
 
 .answer {
   text-align: center;
-  margin-left: 45%;
-  margin-right: 20px;
+  margin-left: 25%;
+  margin-right: 10px;
   padding: 10px;
-  border: 1px solid chocolate;
-  border-radius: 15px;
+  border-bottom: 1px solid chocolate;
 }
 
 /*FAQ SPECIFIC STYLES END*/
