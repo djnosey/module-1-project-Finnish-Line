@@ -163,20 +163,30 @@ html {
 
 /*Hamburger menu styles begin*/
 #hamburgercontainer.closed {
-  margin-left: 100vw;
-  height: 0;
-  display: none;
+  margin-left: 150vw;
+  transition: all 1.5s;
+  transition-timing-function: ease-out;
+  position: relative;
+  height: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  color: chocolate;
 }
 
 #hamburgercontainer.open {
   transition: all 1.5s;
+  transition-timing-function: ease-out;
+
   position: relative;
-  height: 700px;
+  height: 500px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  font-size: 3rem;
+  font-size: 2rem;
   color: chocolate;
 }
 #hamburgercontainer > ul > li {
