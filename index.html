@@ -6,12 +6,13 @@
     <title>Finnish Line</title>
     <link rel="stylesheet" href="./styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header id = "headercontainer">
         <nav id="navbar" >
             <img id="logoimage" src="./images/edbd9e8968bb60e9cc64436769093d18.jpg" alt="logo">
-            <i class="fas fa-ellipsis-v fa-2x"></i>
+            <i id="hamburgericon"class="fas fa-ellipsis-v fa-2x" onclick="openfunction()" ></i>
             <ul id="navbarmenu">
                 <li>Home</li>
                 <li>Dashboard</li>
@@ -20,12 +21,21 @@
             </ul>
         </nav>
     </header>
-    <section class ="imageheader">
+    <menu id="hamburgercontainer" class="closed">
+        <ul>
+            <li>Home</li>
+            <li>Dashboard</li>
+            <li>FAQ</li>
+            <li>Login</li>
+            <li>Signup</li>
+        </ul>
+    </menu>
+
+    <section class ="imageheader" >
         <div class ="imageheadertext">
 
             <h1>Welcome to the Finnish line</h1>
             <h4>Best events in Finland</h4>
-            <button class ="imageheaderbutton">Search All Events</button>
         </div>
 
     </section>
@@ -52,7 +62,7 @@
         <h4>Travel Advice</h4>
         <h4>-</h4>
         <p>
-            Please check your local information about travelling abroad during the coronavirus pandemic, to ensure a safe and secure trip, entry requirements and travel warnings.        </p>
+            Please check your local information about travelling abroad during the coronavirus pandemic to ensure a safe and secure trip, entry requirements and travel warnings.        </p>
     </div>
     <section class ="imageheader3">
         <div class ="imageheadertext">
@@ -78,7 +88,7 @@
         <p>Home of the Moomins</p>
     </div>
     <div id="homeimagecontainer4">
-        <p>Land of 1000 lakes</p>
+        <p>Land of 100,000 lakes</p>
     </div>
     <div id="homeimagecontainer5">
         <p>Finnish Design</p>
@@ -86,10 +96,16 @@
     <div id="homeimagecontainer6">
         <p>Party like its Wednesday</p>
     </div>
+    <footer id="footercontainer">
+        <p>Powerered by: myhelsinki.fi-openAPI</p>
+        <p>Website created by Steven Payne 2020</p>
 
+
+    </footer>
 
 
     <script src="https://kit.fontawesome.com/8ef40ffc53.js" crossorigin="anonymous"></script>
+    
 
 </body>
 </html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnish Line</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id = "headercontainer">
+        <nav id="navbar" >
+            <img id="logoimage" src="./images/edbd9e8968bb60e9cc64436769093d18.jpg" alt="logo">
+            <i id="hamburgericon"class="fas fa-ellipsis-v fa-2x" onclick="openfunction()" ></i>
+            <ul id="navbarmenu">
+                <li>Home</li>
+                <li>Dashboard</li>
+                <li>FAQs</li>
+                <li>Login/Sign Up</li>
+            </ul>
+        </nav>
+    </header>
+    <menu id="hamburgercontainer" class="closed">
+        <ul>
+            <li>Home</li>
+            <li>Dashboard</li>
+            <li>FAQ</li>
+            <li>Login</li>
+            <li>Signup</li>
+        </ul>
+    </menu>
+    <section class ="imageheader" id="dashboardimage">
+        <div class ="imageheadertext">
+
+            <h1>Search for Events, Places and Activities in Finland</h1>
+            <h4></h4>
+        </div>
+    </section>
+    <section id="searchsectioncontainer">
+        <p>choose type of event</p>
+        <div id="buttonscontainer">
+            <button class="eventbutton">Events</button>
+            <button class="eventbutton">Activities</button>
+            <button class="eventbutton">Places</button>
+        </div>
+
+        <div>
+            <input id ="searchinput" type="text" placeholder="type your search query here">
+        </div>
+        <div>
+           <span>Or just click search to display all</span>
+           
+            <button>Search</button>
+        </div>
+
+    </section>
+
+    <section id="searchresultscontainer">
+
+        <article class ="resultsitemcontainer">
+            <div class ="resultsitem">
+                <h3>Events name</h3>
+            </div>
+            <div>
+                <p>events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                </p>
+                <a href="#">events url</a>
+            </div>        
+        </article>
+
+        <article class ="resultsitemcontainer">
+            <div class ="resultsitem">
+                <h3>Events name</h3>
+            </div>
+            <div>
+                <p>events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                    events description bla bla bla bla bla bla bla
+                </p>
+                <a href="#">events url</a>
+            </div>        
+        </article>
+
+    </section>
+
+
+    <footer id="footercontainer">
+        <p>Powerered by: myhelsinki.fi-openAPI</p>
+        <p>Website created by Steven Payne 2020</p>
+
+
+    </footer>
+
+
+    <script src="https://kit.fontawesome.com/8ef40ffc53.js" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>

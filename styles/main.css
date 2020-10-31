@@ -155,11 +155,33 @@ html {
 }
 
 .fa-ellipsis-v {
-  color: #b5c9d8;
+  color: chocolate;
   margin-right: 20px;
 }
 
 /*NAVBAR STYLES END*/
+
+/*Hamburger menu styles begin*/
+#hamburgercontainer.closed {
+  margin-left: 100vw;
+  height: 0;
+  display: none;
+}
+
+#hamburgercontainer.open {
+  transition: all 1.5s;
+  position: relative;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3rem;
+  color: chocolate;
+}
+#hamburgercontainer > ul > li {
+  padding: 20px;
+}
 
 /*MAIN IMAGES STYLE BEGINS*/
 
@@ -278,6 +300,8 @@ html {
 }
 
 #homeimagecontainer > p {
+  text-align: center;
+
   background-color: rgba(0, 0, 0, 0.8);
   padding: 7px;
   border-radius: 2px;
@@ -300,6 +324,8 @@ html {
 }
 
 #homeimagecontainer2 > p {
+  text-align: center;
+
   background-color: rgba(0, 0, 0, 0.8);
   padding: 7px;
   border-radius: 2px;
@@ -321,6 +347,8 @@ html {
 }
 
 #homeimagecontainer3 > p {
+  text-align: center;
+
   background-color: rgba(0, 0, 0, 0.8);
   padding: 7px;
   border-radius: 2px;
@@ -343,6 +371,8 @@ html {
 
 #homeimagecontainer4 > p {
   background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+
   padding: 7px;
   border-radius: 2px;
   font-size: 1.5rem;
@@ -365,6 +395,8 @@ html {
 
 #homeimagecontainer5 > p {
   background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+
   padding: 7px;
   border-radius: 2px;
   font-size: 1.5rem;
@@ -387,6 +419,7 @@ html {
 
 #homeimagecontainer6 > p {
   background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
   padding: 7px;
   border-radius: 2px;
   font-size: 1.5rem;
@@ -395,3 +428,105 @@ html {
 }
 
 /*LOWER IMAGES STYLE ENDS*/
+/* FOOTER STYLES BEGIN */
+
+#footercontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px 0 5px;
+  height: 50px;
+  width: 100vw;
+  -webkit-box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
+}
+
+.imageheader#dashboardimage {
+  background-image: url(../images/lakefromabove.jpg);
+}
+
+/*FOOTER STYLES END*/
+
+/*DASHBOARD PAGE SPECIFIC STYLES BEGINS*/
+
+/*DASHBOARD SEARCH AREA BEGINS*/
+#searchsectioncontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#buttonscontainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.eventbutton {
+  background-color: chocolate;
+  box-sizing: content-box;
+  border: none;
+  border-radius: 6px;
+  width: 60px;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+}
+
+#searchinput {
+  border: 0;
+  border-bottom: 1px solid chocolate;
+  outline: white;
+  height: 20px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.resultsitemcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  -webkit-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 38px -27px rgba(0, 0, 0, 0.75);
+  padding: 10px;
+}
+
+.resultsitem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../images/miikka-luotio-3SDVrlAP1Uo-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  margin: 0 auto 10px auto;
+  width: 100%;
+}
+
+.resultsitem > h3 {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  width: 80%;
+  border-radius: 2px;
+}
+
+.resultsitemcontainer p {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.resultsitemcontainer a {
+  padding: 10px 10px 20px 10px;
+  margin-bottom: 5px;
+}
+/*DASHBOARD SEARCH AREA ENDS*/
