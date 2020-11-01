@@ -236,12 +236,12 @@ html {
   padding: 20px;
 }
 
-.imageheadertext > h1 {
+.imageheadertext h1 {
   font-size: 2.5rem;
   font-weight: 400;
   margin: 5px;
 }
-.imageheadertext > h4 {
+.imageheadertext h4 {
   font-size: 1.2rem;
   padding: 5px;
   font-weight: 200;
@@ -283,13 +283,13 @@ html {
   text-align: center;
 }
 
-.hometextcontainer > h4 {
+.hometextcontainer h4 {
   font-weight: 400;
   font-size: 1.4rem;
   color: chocolate;
 }
 
-.hometextcontainer > p {
+.hometextcontainer p {
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -298,140 +298,40 @@ html {
 
 /*LOWER IMAGES STYLE BEGINS*/
 
-#homeimagecontainer {
+.homeimagecontainer {
   width: 80vw;
   height: 200px;
   margin: 0 auto 30px auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#hic1 {
   background-image: url(../images/f7fed23723e8f63f9ce41ab358c9b38f.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
-#homeimagecontainer > p {
-  text-align: center;
-
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 7px;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: white;
-}
-
-#homeimagecontainer2 {
-  width: 80vw;
-  height: 200px;
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#hic2 {
   background-image: url(../images/97.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
-#homeimagecontainer2 > p {
-  text-align: center;
-
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 7px;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: white;
-}
-#homeimagecontainer3 {
-  width: 80vw;
-  height: 200px;
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#hic3 {
   background-image: url(../images/moomins.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
-#homeimagecontainer3 > p {
-  text-align: center;
-
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 7px;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: white;
-}
-#homeimagecontainer4 {
-  width: 80vw;
-  height: 200px;
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#hic4 {
   background-image: url(../images/lakes.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
-#homeimagecontainer4 > p {
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-
-  padding: 7px;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: white;
-}
-
-#homeimagecontainer5 {
-  width: 80vw;
-  height: 200px;
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#hic5 {
   background-image: url(../images/Main\ marimekko.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
-
-#homeimagecontainer5 > p {
-  background-color: rgba(0, 0, 0, 0.8);
-  text-align: center;
-
-  padding: 7px;
-  border-radius: 2px;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: white;
-}
-
-#homeimagecontainer6 {
-  width: 80vw;
-  height: 200px;
-  margin: 0 auto 30px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#hic6 {
   background-image: url(../images/finlandiaVodka.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
-#homeimagecontainer6 > p {
-  background-color: rgba(0, 0, 0, 0.8);
+.homeimagecontainer p {
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 7px;
   border-radius: 2px;
   font-size: 1.5rem;

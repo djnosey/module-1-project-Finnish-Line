@@ -1,13 +1,7 @@
 const menuIcon = document.querySelector("#hamburgericon");
 const menu = document.querySelector("#hamburgercontainer");
 
-console.log(menuIcon);
-
-const menufunction = () => {};
-
-menuIcon.addEventListener("click", function () {
-  console.log("clicked");
-
+const menufunction = () => {
   if (menu.classList.contains("closed")) {
     menu.classList.remove("closed");
     menu.classList.add("open");
@@ -19,4 +13,6 @@ menuIcon.addEventListener("click", function () {
     menuIcon.classList.remove("open");
     menuIcon.classList.add("closed");
   }
-});
+};
+
+menuIcon.addEventListener("click", menufunction);
