@@ -154,9 +154,17 @@ html {
   display: none;
 }
 
-.fa-ellipsis-v {
+.fa-ellipsis-v.closed {
   color: chocolate;
   margin-right: 20px;
+  transition: all 0.5s 0.8s;
+}
+
+.fa-ellipsis-v.open {
+  color: chocolate;
+  margin-right: 20px;
+  transition: all 0.5s;
+  transform: rotate(90deg);
 }
 
 /*NAVBAR STYLES END*/
@@ -185,7 +193,13 @@ html {
   font-size: 2rem;
   color: chocolate;
 }
-#hamburgercontainer > ul > li {
+#hamburgercontainer a {
+  color: chocolate;
+  text-decoration: none;
+}
+
+#hamburgercontainer li {
+  list-style: none;
   padding: 20px;
 }
 /*Hamburger menu styles end*/
