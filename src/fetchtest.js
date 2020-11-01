@@ -12,10 +12,10 @@ fetch(
   });
 
 function placetext() {
-  weatherAnswer.textContent = ` The current temperature is ${weatherdata.weather.temperature} degrees centigrade`;
-  northernLights.textContent = `To see the northern lights you first need a clear sky. To see the northen lights in Lapland, an Aurora activity of between 0-2KP is needed. To see the Northen
+  weatherAnswer.innerHTML = ` The current temperature is <strong>${weatherdata.weather.temperature}</strong> degrees centigrade`;
+  northernLights.innerHTML = `To see the northern lights you first need a clear sky. To see the northen lights in Lapland, an Aurora activity of between 0-2KP is needed. To see the Northen
   lights in Helsinki an Aurora activity of between 3-4KP is needed.\n 
-   The current cloud coverage is ${weatherdata.weather.cloud}%. 
-   The current aurora activity is ${weatherdata.ace.kp}KP
+   The current cloud coverage is <strong>${weatherdata.weather.cloud}%</strong>. 
+   The current aurora activity is <strong>${weatherdata.ace.kp}KP</strong>.
   `;
 }

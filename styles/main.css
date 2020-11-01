@@ -172,6 +172,7 @@ html {
 /*Hamburger menu styles begin*/
 #hamburgercontainer.closed {
   margin-left: 115vw;
+  overflow: hidden;
   transition: margin-left ease-in-out 1s 0.3s, height 1.5s 1s;
   height: 0px;
   display: flex;
@@ -196,13 +197,28 @@ html {
 #hamburgercontainer a {
   color: chocolate;
   text-decoration: none;
+  transition: all 0.5s;
 }
 
 #hamburgercontainer li {
   list-style: none;
   padding: 20px;
 }
+
+#hamburgercontainer a:hover {
+  transition: all 0.5s;
+  background-color: chocolate;
+  color: white;
+  list-style: none;
+  padding: 20px;
+}
+
 /*Hamburger menu styles end*/
+
+#pagecontainer {
+  display: flex;
+  flex-direction: column;
+}
 
 /*MAIN IMAGES STYLE BEGINS*/
 
@@ -210,11 +226,14 @@ html {
   display: flex;
   width: 100vw;
   flex-direction: column;
-  background-image: url("../images/tom-brunberg-nZ9wWG8jRTQ-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 740px;
+  height: 700px;
+}
+
+#imageheader1 {
+  background-image: url("../images/tom-brunberg-nZ9wWG8jRTQ-unsplash.jpg");
 }
 
 #imageheader2 {
@@ -242,6 +261,9 @@ html {
   margin: 5px;
 }
 .imageheadertext h4 {
+  margin: 10px auto 0 auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: fit-content;
   font-size: 1.2rem;
   padding: 5px;
   font-weight: 200;
@@ -299,7 +321,7 @@ html {
 /*LOWER IMAGES STYLE BEGINS*/
 
 .homeimagecontainer {
-  width: 80vw;
+  width: 300px;
   height: 200px;
   margin: 0 auto 30px auto;
   display: flex;
@@ -396,6 +418,13 @@ html {
   color: chocolate;
   margin: 10px 5px;
   padding: 10px;
+  transition: all 0.6s;
+}
+
+.eventbutton:hover {
+  transition: all 0.6s;
+  background-color: chocolate;
+  color: white;
 }
 
 #searchbutton {
@@ -419,7 +448,7 @@ html {
 }
 
 .searchinput::placeholder {
-  color: white;
+  color: chocolate;
   font-family: "Roboto Mono";
   font-weight: 400;
   font-size: 1.2rem;
@@ -428,10 +457,19 @@ html {
   color: chocolate;
   font-size: 1rem;
 }
+
+#searchresultscontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
 .resultsitemcontainer {
   display: flex;
   flex-direction: column;
-  width: 80vw;
+  width: 300px;
   justify-content: center;
   align-items: center;
   margin: 20px auto;
@@ -450,7 +488,7 @@ html {
   background-repeat: no-repeat;
   height: 200px;
   margin: 0 auto 10px auto;
-  width: 80vw;
+  width: 300px;
 }
 
 .resultsitem > h3 {
@@ -488,7 +526,8 @@ html {
 }
 
 .question {
-  text-align: center;
+  text-align: left;
+  font-size: 1.2rem;
   width: fit-content;
   border-radius: 15px;
   padding: 10px;
@@ -503,42 +542,177 @@ html {
   border-bottom: 1px solid chocolate;
 }
 
+.answer strong {
+  font-weight: 400;
+  color: chocolate;
+}
+
 /*FAQ SPECIFIC STYLES END*/
 
 /*LOGIN SPECIFIC STYLES BEGIN*/
 #maindivlogin {
   display: flex;
+  justify-content: center;
   width: 100vw;
-  flex-direction: column;
-  background-image: url("../images/loginimage.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  flex-direction: row;
+  color: chocolate;
   height: 740px;
 }
 
 #loginheader {
   text-align: center;
   position: relative;
-  top: 90px;
   margin-top: 50px auto 0 auto;
   padding: 10px;
-  color: white;
+  color: chocolate;
   font-size: 3rem;
 }
 
 #loginform {
   padding: 10px;
-  position: relative;
-  top: 90px;
   background-color: rgba(256, 256, 256, 0.3);
   text-align: center;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  margin: 50px auto;
+  margin: 20px auto;
   width: 70%;
 }
+
+.hideme {
+  transition: all 2s;
+  opacity: 0;
+}
 /*LOGIN SPECIFIC STYLES END*/
+
+/* START STYLES FOR LARGER SCREENS*/
+
+/*NAV BAR*/
+
+@media (min-width: 768px) {
+  #navbarmenu {
+    display: flex;
+    width: 95vw;
+    justify-content: flex-end;
+  }
+  #navbarmenu a {
+    text-decoration: none;
+    color: chocolate;
+    margin: 0 20px;
+  }
+  .fa-ellipsis-v.closed {
+    display: none;
+  }
+  .fa-ellipsis-v.open {
+    display: none;
+  }
+  #hamburgercontainer.closed {
+    display: none;
+  }
+
+  #hamburgercontainer ul {
+    display: none;
+  }
+
+  #hamburgercontainer.open {
+    display: none;
+  }
+  #hamburgercontainer a {
+    display: none;
+  }
+
+  /*NAVBAR ENDS*/
+  /*Homepage begins*/
+
+  .imageheadertext {
+    margin: auto;
+  }
+
+  #imageheader1 {
+    order: 1;
+  }
+  #textcontainer1 {
+    order: 2;
+  }
+  #textcontainer3 {
+    border-top: 1px solid chocolate;
+    padding-top: 20px;
+    order: 3;
+  }
+  #small1 {
+    width: 80vw;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid chocolate;
+    margin: 10px auto 30px auto;
+    order: 4;
+    display: flex;
+  }
+  #imageheader2 {
+    order: 5;
+  }
+  #textcontainer2 {
+    border-top: 1px solid chocolate;
+    padding-top: 20px;
+    order: 6;
+  }
+  #small2 {
+    width: 80vw;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid chocolate;
+    margin: 10px auto 30px auto;
+    order: 7;
+    display: flex;
+  }
+  #imageheader3 {
+    order: 8;
+  }
+
+  #searchresultscontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    border-top: 1px solid chocolate;
+  }
+
+  .resultsitemcontainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .resultsitem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("../images/miikka-luotio-3SDVrlAP1Uo-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin: 0 auto 10px auto;
+    width: 300px;
+  }
+
+  #loginform {
+    padding: 20px;
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+  }
+
+  #loginform form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*FAQ PAGE STARTS*/
+}

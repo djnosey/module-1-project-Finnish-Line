@@ -1,32 +1,94 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const basicsearchURL = "http://open-api.myhelsinki.fi/v1/places/?limit=30";
 const resultsItemContainer = document.querySelector("#searchresultscontainer");
-let places = dataExample.data;
+const eventsButton = document.querySelector("#eventsbutton");
+const activitiesButton = document.querySelector("#activitiesbutton");
+const placesButton = document.querySelector("#placesbutton");
+const searchButton = document.querySelector("#searchbutton");
 
+let url = ``;
 
+eventsButton.addEventListener("click", () => {
+  url = `http://open-api.myhelsinki.fi/v1/events/?limit=1000`;
+});
+activitiesButton.addEventListener("click", () => {
+  url = `http://open-api.myhelsinki.fi/v1/activities/?limit=100`;
+});
+placesButton.addEventListener("click", () => {
+  url = `http://open-api.myhelsinki.fi/v1/places/?limit=100`;
+});
+searchButton.addEventListener("click", fetchData);
 
-var filteredPlaces1 = places.filter((item) => item.description.images !== null);
-var filteredPlaces2 = filteredPlaces1.filter((item) => item.tags !== null);
-var filteredPlaces3 = filteredPlaces2.filter((item) => item.tags.length !== 0);
-var filteredPlaces4 = filteredPlaces3.filter(
-  (item) => item.description.images.length !== 0
-);
+function fetchData() {
+  fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+    .then((response) => {
+      if (response.ok) return response.json();
+      throw new Error("Network response was not ok.");
+    })
+    .then((data) => {
+      results = data.contents;
+      parsedResults = JSON.parse(results).data;
+      console.log(parsedResults);
+      places = parsedResults;
+    });
+  setTimeout(filterResults, 10000);
+  setTimeout(insertresult, 15000);
+}
 
-insertresult();
+///////////**********************************///////////
+
+/* TO USE THE REAL FETCH FUNCTION, UNCOMMENT THE "FETCH"*/
+
+// fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+//   .then((response) => {
+//     if (response.ok) return response.json();
+//     throw new Error("Network response was not ok.");
+//   })
+//   .then((data) => {
+//     results = data.contents;
+//     parsedResults = JSON.parse(results).data;
+//     console.log(parsedResults);
+//     places = parsedResults;
+//   });
+
+/* AND COMMENT THE LINE BELOW */
+
+//places = dataExample.data;
+
+///////////**********************************///////////
+
+/* FUNCTION THAT FILTERS OUT RESULTS WITHOUT PICTURE OR TAGS*/
+
+function filterResults() {
+  filteredPlaces1 = places.filter((item) => item.description.images !== null);
+  filteredPlaces2 = filteredPlaces1.filter((item) => item.tags !== null);
+  filteredPlaces3 = filteredPlaces2.filter((item) => item.tags.length !== 0);
+  filteredPlaces4 = filteredPlaces3.filter(
+    (item) => item.description.images.length !== 0
+  );
+  filteredPlaces5 = filteredPlaces4.filter((item) => item.name.en !== null);
+  console.log("filteredPlaces4", filteredPlaces4);
+  filteredPlaces6 = filteredPlaces5.filter();
+}
+
+///////////**********************************///////////
+
+// setTimeout(filterResults, 10000);
+// setTimeout(insertresult, 15000);
 
 function insertresult() {
-  filteredPlaces4.forEach((item) => {
-    var result = `   
+  resultsItemContainer.innerHTML = "";
+
+  filteredPlaces5.forEach((item) => {
+    result = `
     <article class ="resultsitemcontainer">
-         
+
 <div class ="resultsitem" style="background-image:url(${
       item.description.images[0].url
     }) ">
 <h3>${item.name.en}</h3>
 </div>
 <div>
-<p>Tags:</p>
-<p>${item.tags[0].name}</p>
+<span>Tags:<span>
+<span>${item.tags[0].name}<span>
 <p>Description</p>
 
 <p>${item.description.body.slice(0, 200)}
@@ -38,16 +100,3 @@ function insertresult() {
     resultsItemContainer.innerHTML += result;
   });
 }
-
-
-// fetchBasicData();
-
-// function fetchBasicData() {
-//   fetch(proxyurl + basicsearchURL)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       places = data;
-//     })
-//     .then(filterResults())
-//     .then(insertresult());
-// }
