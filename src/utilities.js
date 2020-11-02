@@ -2,7 +2,6 @@
 
 const menuIcon = document.querySelector("#hamburgericon");
 const menu = document.querySelector("#hamburgercontainer");
-const newUserButton = document.querySelector("#newuserbutton");
 const nameInput = document.querySelector("#name");
 const repeatpasswordinput = document.querySelector("#repeatpassword");
 const churches = document.querySelector("#hic1");
@@ -29,13 +28,5 @@ const menufunction = () => {
   }
 };
 
-const openform = (e) => {
-  e.preventDefault();
-  repeatpasswordinput.classList.remove("hideme");
-  nameInput.classList.remove("hideme");
-  newUserButton.innerHTML = "Sign Up";
-};
-
 menuIcon.addEventListener("click", menufunction);
-newUserButton.addEventListener("click", openform);
 churches.addEventListener("click", saveChurch);

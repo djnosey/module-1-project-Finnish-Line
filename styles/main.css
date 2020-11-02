@@ -584,11 +584,12 @@ html {
 /*LOGIN SPECIFIC STYLES BEGIN*/
 #maindivlogin {
   display: flex;
-  justify-content: center;
-  width: 100vw;
-  flex-direction: row;
+  justify-content: flex-start;
+  width: 80vw;
+  flex-direction: column;
   color: chocolate;
   height: 740px;
+  margin: 0 auto;
 }
 
 #loginheader {
@@ -613,10 +614,6 @@ html {
   width: 70%;
 }
 
-.hideme {
-  transition: all 2s;
-  opacity: 0;
-}
 /*LOGIN SPECIFIC STYLES END*/
 
 /* START STYLES FOR LARGER SCREENS*/

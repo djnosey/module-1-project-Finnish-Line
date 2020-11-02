@@ -1,5 +1,8 @@
 "use strict";
 const messageContainer = document.querySelector("#errormessagecontainer");
+const emailInput = document.querySelector("#email");
+const passwordInput = document.querySelector("#password");
+const newUserButton = document.querySelector("#newuserbutton");
 
 class Login {
   constructor() {
@@ -12,10 +15,11 @@ class Login {
 
   handleSubmit(event) {
     event.preventDefault();
-    const email = event.target.value;
-    const password = event.target.value;
+    const email = emailInput.value;
+    const password = passwordInput.value;
 
     const users = db.getAllUsers();
+    console.log(users);
 
     const user = users.find((item) => {
       if (item.email === email && item.password === password) {
@@ -28,24 +32,22 @@ class Login {
     if (!user) {
       p.textContent = "Email or passsword is incorrect";
     } else {
+      setTimeout(() => {
+        location.assign("dashboard.html");
+      }, 3000);
       p.textContent = `Hello ${user.name}!`;
     }
 
     messageContainer.appendChild(p);
-
-    setTimeout(() => {
-      location.assign("dashboard.html");
-    }, 2000);
   }
 
-  directNewUser() {
-    setTimeout(() => {
-      location.assign("signup.html");
-    }, 1000);
+  directNewUser(e) {
+    e.preventDefault();
+    location.assign("/signup.html");
   }
 }
 
 const login = new Login();
 
 login.loginButton.addEventListener("click", login.handleSubmit);
-login.newUserButton.addEventListener("click", login.directNewUser);
+newUserButton.addEventListener("click", login.directNewUser);
