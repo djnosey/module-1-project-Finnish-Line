@@ -20,8 +20,7 @@ class SignUp {
     const email = emailInput.value;
     validator.validateValidEmail(email);
     validator.validateUniqueEmail(email);
-
-    console.log("validator.errors", validator.errors);
+    this.setErrorMessages();
   };
   handlePasswordInput = (event) => {
     const passwordInput = event.target;
@@ -30,7 +29,7 @@ class SignUp {
     const repeatPassword = repeatPasswordinput.value;
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-    console.log("validator.errors", validator.errors);
+    this.setErrorMessages();
   };
   handleRepeatPasswordInput = (event) => {
     const repeatPasswordInput = event.target;
@@ -39,8 +38,20 @@ class SignUp {
     const password = passwordinput.value;
     validator.validatePassword(password);
     validator.validateRepeatPassword(password, repeatPassword);
-    console.log("validator.errors", validator.errors);
+    this.setErrorMessages();
   };
+
+  setErrorMessages() {
+    this.errorContainer.innerHTML = "";
+    const errorsObject = validator.getErrors();
+    const errorsArray = Object.values(errorsObject);
+
+    errorsArray.forEach((item) => {
+      const p = document.createElement("p");
+      p.textContent = item;
+      this.errorContainer.appendChild(p);
+    });
+  }
 
   //handle the sending of data on submit
   saveData = (event) => {
