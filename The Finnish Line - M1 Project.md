@@ -2,7 +2,7 @@
 
 ### Description
 
-In 2020 the rise in belief of conspiracy theories has been exponential. At **The Finnish Line** we aim to bust at least one of them by proving "Finland Does Exist" and providing a comprehensive list of Activities, Places and Events to visit in the land of the midnight sun. You can make a free text search, choose some of our pre determined categories including; winter, children, design or nightlife. **The Finnish Line** has been developed as a front-end project for Ironhack's web development course. written in vanilla javascript it utilises MyHelsinkiOpenAPI to fetch the events and auroraslive.io to give you your chances of seeing the northern lights. 
+In 2020 the rise in belief of conspiracy theories has been exponential. At **The Finnish Line** we aim to bust at least one of them by proving "Finland Does Exist" and providing a comprehensive list of Activities, Places and Events to visit in the land of the midnight sun. You can choose some of our pre determined categories including; winter, children, design or nightlife. or search by activity/event or place **The Finnish Line** has been developed as a front-end project for Ironhack's web development course. written in vanilla javascript it utilises MyHelsinkiOpenAPI to fetch the events and auroraslive.io to give you your chances of seeing the northern lights.
 
 ### MVP (Minimum Viable product)
 
