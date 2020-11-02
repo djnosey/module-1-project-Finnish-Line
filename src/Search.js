@@ -29,8 +29,8 @@ function fetchData() {
       console.log(parsedResults);
       places = parsedResults;
     });
-  setTimeout(filterResults, 10000);
-  setTimeout(insertresult, 15000);
+  setTimeout(filterResults, 5000);
+  setTimeout(insertresult, 7000);
 }
 
 ///////////**********************************///////////

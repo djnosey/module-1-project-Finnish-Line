@@ -335,20 +335,44 @@ html {
 #hic1 {
   background-image: url(../images/f7fed23723e8f63f9ce41ab358c9b38f.jpg);
 }
+#hic1:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
+}
 #hic2 {
   background-image: url(../images/97.jpg);
+}
+#hic2:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
 }
 #hic3 {
   background-image: url(../images/moomins.jpg);
 }
+#hic3:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
+}
 #hic4 {
   background-image: url(../images/lakes.jpg);
+}
+#hic4:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
 }
 #hic5 {
   background-image: url(../images/Main\ marimekko.jpg);
 }
+#hic5:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
+}
 #hic6 {
   background-image: url(../images/finlandiaVodka.png);
+}
+#hic6:hover {
+  background-image: url(../images/black.png);
+  transition: background-image 0.3s 0.1s;
 }
 
 .homeimagecontainer p {
@@ -425,6 +449,14 @@ html {
   transition: all 0.6s;
   background-color: chocolate;
   color: white;
+}
+
+.eventbutton:focus {
+  transition: all 0.6s;
+  background-color: chocolate;
+  color: white;
+  outline: none;
+  border: none;
 }
 
 #searchbutton {
@@ -642,8 +674,8 @@ html {
     order: 3;
   }
   #small1 {
-    width: 80vw;
-    justify-content: space-around;
+    width: 90vw;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid chocolate;
     margin: 10px auto 30px auto;
@@ -659,8 +691,8 @@ html {
     order: 6;
   }
   #small2 {
-    width: 80vw;
-    justify-content: space-around;
+    width: 90vw;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid chocolate;
     margin: 10px auto 30px auto;
