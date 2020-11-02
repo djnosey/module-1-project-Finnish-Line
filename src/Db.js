@@ -22,3 +22,7 @@ class Db {
     localStorage.setItem("users", updatedUsersString);
   }
 }
+
+const db = new Db
+
+

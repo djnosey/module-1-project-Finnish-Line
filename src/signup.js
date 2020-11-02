@@ -42,6 +42,7 @@ class SignUp {
     console.log(newUser);
 
     //save to db >>>>
+    db.saveNewUser(newUser);
 
     //clear the form
     this.nameInput.value = "";
