@@ -331,6 +331,9 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+a {
+  text-decoration: none;
+}
 
 #hic1 {
   background-image: url(../images/f7fed23723e8f63f9ce41ab358c9b38f.jpg);
@@ -611,7 +614,6 @@ html {
   justify-content: flex-start;
   align-items: center;
   margin: 20px auto;
-  width: 70%;
 }
 
 /*LOGIN SPECIFIC STYLES END*/
@@ -623,7 +625,7 @@ html {
 @media (min-width: 768px) {
   #navbarmenu {
     display: flex;
-    width: 95vw;
+    width: fit-content;
     justify-content: flex-end;
   }
   #navbarmenu a {

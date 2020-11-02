@@ -4,6 +4,7 @@ const activitiesButton = document.querySelector("#activitiesbutton");
 const placesButton = document.querySelector("#placesbutton");
 const searchButton = document.querySelector("#searchbutton");
 
+let url = ``; //sets fetch url to blank on page load
 
 /*function to retrieve url query */
 
@@ -18,12 +19,19 @@ function GetURLParameter(sParam) {
   }
 }
 const myQuery = GetURLParameter("query");
-
+const type = GetURLParameter("type");
 console.log(myQuery);
 
-/** function ends */
+if (myQuery) {
+  if (myQuery === "all") {
+    url = `http://open-api.myhelsinki.fi/v1/places/?limit=1000`;
+  } else {
+    url = `http://open-api.myhelsinki.fi/v1/${type}/?tags_search=` + myQuery;
+  }
+  fetchData();
+}
 
-let url = ``;
+/** function ends */
 
 eventsButton.addEventListener("click", () => {
   url = `http://open-api.myhelsinki.fi/v1/events/?limit=1000`;
@@ -48,8 +56,8 @@ function fetchData() {
       console.log(parsedResults);
       places = parsedResults;
     });
-  setTimeout(filterResults, 5000);
-  setTimeout(insertresult, 7000);
+  setTimeout(filterResults, 3000);
+  setTimeout(insertresult, 5000);
 }
 
 ///////////**********************************///////////
