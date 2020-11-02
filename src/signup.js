@@ -18,14 +18,28 @@ class SignUp {
   handleEmailInput = (event) => {
     const emailInput = event.target;
     const email = emailInput.value;
+    validator.validateValidEmail(email);
+    validator.validateUniqueEmail(email);
+
+    console.log("validator.errors", validator.errors);
   };
   handlePasswordInput = (event) => {
     const passwordInput = event.target;
     const password = passwordInput.value;
+    const repeatPasswordinput = this.repeatPasswordInput;
+    const repeatPassword = repeatPasswordinput.value;
+    validator.validatePassword(password);
+    validator.validateRepeatPassword(password, repeatPassword);
+    console.log("validator.errors", validator.errors);
   };
   handleRepeatPasswordInput = (event) => {
     const repeatPasswordInput = event.target;
     const repeatPassword = repeatPasswordInput.value;
+    const passwordinput = this.passwordInput;
+    const password = passwordinput.value;
+    validator.validatePassword(password);
+    validator.validateRepeatPassword(password, repeatPassword);
+    console.log("validator.errors", validator.errors);
   };
 
   //handle the sending of data on submit
@@ -52,7 +66,6 @@ class SignUp {
   };
 
   //event listeners
-
   addlisteners = () => {
     this.emailInput.addEventListener("input", this.handleEmailInput);
     this.passwordInput.addEventListener("input", this.handlePasswordInput);
