@@ -4,6 +4,25 @@ const activitiesButton = document.querySelector("#activitiesbutton");
 const placesButton = document.querySelector("#placesbutton");
 const searchButton = document.querySelector("#searchbutton");
 
+
+/*function to retrieve url query */
+
+function GetURLParameter(sParam) {
+  var sPageURL = window.location.search.substring(1);
+  var sURLVariables = sPageURL.split("&");
+  for (var i = 0; i < sURLVariables.length; i++) {
+    var sParameterName = sURLVariables[i].split("=");
+    if (sParameterName[0] == sParam) {
+      return sParameterName[1];
+    }
+  }
+}
+const myQuery = GetURLParameter("query");
+
+console.log(myQuery);
+
+/** function ends */
+
 let url = ``;
 
 eventsButton.addEventListener("click", () => {
