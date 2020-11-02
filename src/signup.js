@@ -2,7 +2,6 @@
 
 class SignUp {
   constructor() {
-    //inputs
 
     this.nameInput = document.querySelector("#name");
     this.emailInput = document.querySelector("#email");
@@ -13,7 +12,6 @@ class SignUp {
     this.errorContainer = document.querySelector("#errormessagecontainer");
   }
 
-  //handle the inputs
 
   handleEmailInput = (event) => {
     const emailInput = event.target;
@@ -53,7 +51,6 @@ class SignUp {
     });
   }
 
-  //handle the sending of data on submit
   saveData = (event) => {
     event.preventDefault();
 
@@ -76,7 +73,6 @@ class SignUp {
     this.repeatPasswordInput.input = "";
   };
 
-  //event listeners
   addlisteners = () => {
     this.emailInput.addEventListener("input", this.handleEmailInput);
     this.passwordInput.addEventListener("input", this.handlePasswordInput);
