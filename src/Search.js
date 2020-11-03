@@ -44,10 +44,10 @@ placesButton.addEventListener("click", () => {
 });
 searchButton.addEventListener("click", function () {
   fetchData();
-  loadingText();
 });
 
 function fetchData() {
+  loadingText();
   fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
     .then((response) => {
       if (response.ok) return response.json();
@@ -66,7 +66,7 @@ function fetchData() {
   setTimeout(insertresult, 5000);
   setTimeout(function () {
     searchButton.innerHTML = "Search again";
-  }, 7000);
+  }, 10000);
 }
 
 /* FUNCTION THAT FILTERS OUT RESULTS WITHOUT PICTURE OR TAGS*/

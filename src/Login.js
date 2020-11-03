@@ -41,13 +41,13 @@ class Login {
     this.messageContainer.appendChild(p);
   };
 
-  directNewUser(e) {
+  directNewUser = (e) => {
     e.preventDefault();
-    location.assign("./signup.html");
-  }
+    location.assign("signup.html");
+  };
 }
 
 const login = new Login();
 
 login.loginButton.addEventListener("click", login.handleSubmit);
-newUserButton.addEventListener("click", login.directNewUser);
+login.newUserButton.addEventListener("click", login.directNewUser);

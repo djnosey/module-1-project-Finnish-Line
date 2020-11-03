@@ -4,8 +4,7 @@ const menuIcon = document.querySelector("#hamburgericon");
 const menu = document.querySelector("#hamburgercontainer");
 const nameInput = document.querySelector("#name");
 const repeatpasswordinput = document.querySelector("#repeatpassword");
-const churches = document.querySelector("#hic1");
-
+const churches = document.querySelectorAll(".homeimagecontainer");
 
 const menufunction = () => {
   if (menu.classList.contains("closed")) {
@@ -22,4 +21,5 @@ const menufunction = () => {
 };
 
 menuIcon.addEventListener("click", menufunction);
-churches.addEventListener("click", saveChurch);
+
+churches.forEach((item) => item.addEventListener("click", loadingText));
