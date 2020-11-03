@@ -43,31 +43,30 @@ SingleresultItemContainer.appendChild(bottomhalf);
 //append extra information to container "box"
 SingleresultItemContainer.appendChild(extrainfo);
 
+//     result = `
+//         <article class ="resultsitemcontainer">
 
-    //     result = `
-    //         <article class ="resultsitemcontainer">
+//     <div class ="resultsitem"  style="background-image:url(${
+//       item.description.images[0].url
+//     }) ">
+//     <h3>${item.name.en}</h3>
 
-    //     <div class ="resultsitem"  style="background-image:url(${
-    //       item.description.images[0].url
-    //     }) ">
-    //     <h3>${item.name.en}</h3>
+//     </div>
+//     <div class = "resultsitembelow closed">
+//     <a href=${item.info_url}>Visit website</a>
+//     <button class ="eventbutton" class="readmore">read more</button>
+//     </div>
 
-    //     </div>
-    //     <div class = "resultsitembelow closed">
-    //     <a href=${item.info_url}>Visit website</a>
-    //     <button class ="eventbutton" class="readmore">read more</button>
-    //     </div>
+//     <div class = "extrainformation closed">
+//     <span>Tags:<span>
+//     <span>${item.tags[0].name}<span>
+//     <p>Description</p>
+//     <p>${item.description.body.slice(0, 150)}
+//     </p>
+//     </div>
 
-    //     <div class = "extrainformation closed">
-    //     <span>Tags:<span>
-    //     <span>${item.tags[0].name}<span>
-    //     <p>Description</p>
-    //     <p>${item.description.body.slice(0, 150)}
-    //     </p>
-    //     </div>
-
-    //     </article>
-    //     `;
-    //     resultsItemContainer.innerHTML += result;
-    //   });
-    // }
+//     </article>
+//     `;
+//     resultsItemContainer.innerHTML += result;
+//   });
+// }

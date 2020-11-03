@@ -55,7 +55,6 @@ searchButton.addEventListener("click", function () {
   fetchData();
 });
 
-
 ////////////////////////////////////////////////////////
 ////////*****FUNCTION TO FETCH THE DATA ******/////////
 
@@ -77,6 +76,13 @@ function fetchData() {
     searchButton.innerHTML = "Here's your results!";
   }, 4500);
   setTimeout(insertresult, 5000);
+  setTimeout(() => {
+    const readmorebutton = document.querySelectorAll(".readmorebutton");
+    readmorebutton.forEach((item) =>
+      item.addEventListener("click", readMoreFunction)
+    );
+    console.log(readmorebutton);
+  }, 7000);
   setTimeout(function () {
     searchButton.innerHTML = "Search again";
   }, 10000);
@@ -128,7 +134,7 @@ function insertresult() {
     //create the button
     const readmore = document.createElement("button");
     readmore.classList.add("eventbutton");
-    readmore.classList.add("readmorebutton")
+    readmore.classList.add("readmorebutton");
     readmore.innerHTML = "Read More";
     //append <a> and button to bottomhalf
     bottomhalf.appendChild(website);
@@ -145,14 +151,13 @@ function insertresult() {
     description.innerHTML = item.description.body.slice(0, 200);
     extrainfo.appendChild(tags);
     extrainfo.appendChild(description);
+    bottomhalf.appendChild(extrainfo);
 
     //append three divs to parent
     //append tophalf to the container "box"
     SingleresultItemContainer.appendChild(tophalf);
     //append bottomhalf to the container "box"
     SingleresultItemContainer.appendChild(bottomhalf);
-    //append extra information to container "box"
-    SingleresultItemContainer.appendChild(extrainfo);
     resultsItemContainer.appendChild(SingleresultItemContainer);
   });
 }
@@ -163,7 +168,18 @@ function loadingText() {
   searchButton.innerHTML = "Loading your results, just a sec...";
 }
 
-function readMoreFunction() {
-  console.log("clicked");
+function readMoreFunction(event) {
+  const selectedButton = event.currentTarget;
+  const openMe = selectedButton.parentNode;
+  if (openMe.classList.contains("closed")) {
+    selectedButton.innerHTML = "Close";
+    openMe.classList.remove("closed");
+    openMe.classList.add("open");
+  } else {
+    selectedButton.innerHTML = "Read more";
+    openMe.classList.remove("open");
+    openMe.classList.add("closed");
+    console.log(openMe);
+  }
 }
 ///////////**********************************///////////

@@ -542,6 +542,8 @@ a {
 }
 
 .eventbutton:hover {
+  border: 1px solid chocolate;
+  border-radius: 6px;
   transition: all 0.6s;
   background-color: chocolate;
   color: white;
@@ -552,7 +554,8 @@ a {
   background-color: chocolate;
   color: white;
   outline: none;
-  border: none;
+  border: 1px solid chocolate;
+  border-radius: 6px;
 }
 
 #searchbutton {
@@ -634,7 +637,7 @@ a {
   margin-bottom: 10px;
 }
 .resultsitemcontainer a {
-  padding: 10px 10px 20px 10px;
+  padding: 10px;
   margin-bottom: 5px;
   color: chocolate;
   text-decoration: none;
@@ -642,6 +645,7 @@ a {
 
 .resultsitembelow.closed {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 300px;
@@ -650,10 +654,38 @@ a {
   border-left: 1px solid chocolate;
   border-right: 1px solid chocolate;
   border-bottom: 1px solid chocolate;
+  transition: all 2s;
 }
 
-.extrainformation.closed {
+.resultsitembelow.closed p {
   display: none;
+}
+
+.resultsitembelow.closed span {
+  display: none;
+}
+
+.resultsitembelow.open {
+  transition: all 2s;
+  border-radius: 0 0 6px 6px;
+  border-left: 1px solid chocolate;
+  border-right: 1px solid chocolate;
+  border-bottom: 1px solid chocolate;
+}
+
+.resultsitembelown.open p {
+  display: block;
+  margin-right: 20px;
+}
+.resultsitembelow.open > div > span {
+  margin-left: 20px;
+  display: block;
+}
+
+.extrainformation {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 /*DASHBOARD SEARCH AREA ENDS*/
@@ -876,5 +908,27 @@ a {
     flex-grow: 1;
     width: 500px;
     justify-content: space-evenly;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
   }
 }
