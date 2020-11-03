@@ -233,7 +233,7 @@ html {
 }
 
 #imageheader1 {
-  background-image: url("../images/tom-brunberg-nZ9wWG8jRTQ-unsplash.jpg");
+  background-image: url("../images/homepage\ image.jpg");
 }
 
 #imageheader2 {
@@ -256,7 +256,7 @@ html {
 }
 
 .imageheadertext h1 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 400;
   margin: 5px;
 }
