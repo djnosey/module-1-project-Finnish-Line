@@ -42,7 +42,10 @@ activitiesButton.addEventListener("click", () => {
 placesButton.addEventListener("click", () => {
   url = `http://open-api.myhelsinki.fi/v1/places/?limit=100`;
 });
-searchButton.addEventListener("click", fetchData);
+searchButton.addEventListener("click", function () {
+  fetchData();
+  loadingText();
+});
 
 function fetchData() {
   fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
@@ -57,30 +60,14 @@ function fetchData() {
       places = parsedResults;
     });
   setTimeout(filterResults, 3000);
+  setTimeout(function () {
+    searchButton.innerHTML = "Here's your results!";
+  }, 4000);
   setTimeout(insertresult, 5000);
+  setTimeout(function () {
+    searchButton.innerHTML = "Search again";
+  }, 7000);
 }
-
-///////////**********************************///////////
-
-/* TO USE THE REAL FETCH FUNCTION, UNCOMMENT THE "FETCH"*/
-
-// fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
-//   .then((response) => {
-//     if (response.ok) return response.json();
-//     throw new Error("Network response was not ok.");
-//   })
-//   .then((data) => {
-//     results = data.contents;
-//     parsedResults = JSON.parse(results).data;
-//     console.log(parsedResults);
-//     places = parsedResults;
-//   });
-
-/* AND COMMENT THE LINE BELOW */
-
-//places = dataExample.data;
-
-///////////**********************************///////////
 
 /* FUNCTION THAT FILTERS OUT RESULTS WITHOUT PICTURE OR TAGS*/
 
@@ -127,3 +114,31 @@ function insertresult() {
     resultsItemContainer.innerHTML += result;
   });
 }
+
+///function to display "loading text"////////////
+
+function loadingText() {
+  searchButton.innerHTML = "Loading your results, just a sec...";
+}
+
+///////////**********************************///////////
+
+/* TO USE THE REAL FETCH FUNCTION, UNCOMMENT THE "FETCH"*/
+
+// fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+//   .then((response) => {
+//     if (response.ok) return response.json();
+//     throw new Error("Network response was not ok.");
+//   })
+//   .then((data) => {
+//     results = data.contents;
+//     parsedResults = JSON.parse(results).data;
+//     console.log(parsedResults);
+//     places = parsedResults;
+//   });
+
+/* AND COMMENT THE LINE BELOW */
+
+//places = dataExample.data;
+
+///////////**********************************///////////

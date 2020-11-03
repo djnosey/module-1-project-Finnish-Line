@@ -6,13 +6,6 @@ const nameInput = document.querySelector("#name");
 const repeatpasswordinput = document.querySelector("#repeatpassword");
 const churches = document.querySelector("#hic1");
 
-function saveChurch() {
-  localStorage.set(
-    "church",
-    "http://open-api.myhelsinki.fi/v1/places/?tags_search=Church"
-  );
-  location.assign("/dashboard.html");
-}
 
 const menufunction = () => {
   if (menu.classList.contains("closed")) {

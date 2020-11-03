@@ -145,6 +145,10 @@ html {
   height: 60px;
 }
 
+#navbar a {
+  color: chocolate;
+}
+
 #navbar p {
   margin-left: 10px;
   font-weight: 400;
@@ -165,6 +169,12 @@ html {
   margin-right: 20px;
   transition: all 0.5s;
   transform: rotate(90deg);
+}
+
+.navsignup {
+  -webkit-box-shadow: 0px 10px 29px -25px rgba(210, 105, 30, 1);
+  -moz-box-shadow: 0px 10px 29px -25px rgba(210, 105, 30, 1);
+  box-shadow: 0px 10px 29px -25px rgba(210, 105, 30, 1);
 }
 
 /*NAVBAR STYLES END*/
@@ -393,20 +403,19 @@ a {
 /* FOOTER STYLES BEGIN */
 
 #footercontainer {
-  margin-top: 20px;
+  font-size: 0.8rem;
+  margin: 20px auto 0 auto;
   display: flex;
+  justify-self: center;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5px 0 5px;
   height: 50px;
-  width: 100vw;
-  -webkit-box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px -8px 28px -21px rgba(0, 0, 0, 0.75);
+  width: 90vw;
 }
 
-.imageheader#dashboardimage {
-  background-image: url(../images/lakefromabove.jpg);
+#footercontainer img {
+  width: 45px;
+  height: 45px;
 }
 
 /*FOOTER STYLES END*/
@@ -414,6 +423,11 @@ a {
 /*DASHBOARD PAGE SPECIFIC STYLES BEGINS*/
 
 /*DASHBOARD SEARCH AREA BEGINS*/
+
+.imageheader#dashboardimage {
+  background-image: url(../images/lakefromabove.jpg);
+}
+
 #searchsectioncontainer {
   display: flex;
   flex-direction: column;
@@ -588,6 +602,7 @@ a {
 #maindivlogin {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   width: 80vw;
   flex-direction: column;
   color: chocolate;
@@ -614,6 +629,11 @@ a {
   justify-content: flex-start;
   align-items: center;
   margin: 20px auto;
+}
+
+#errormessagecontainer > p {
+  text-align: center;
+  margin: 10px;
 }
 
 /*LOGIN SPECIFIC STYLES END*/
@@ -731,6 +751,8 @@ a {
     margin: 0 auto 10px auto;
     width: 300px;
   }
+
+  /* login sign up begins*/
 
   #loginform {
     padding: 20px;

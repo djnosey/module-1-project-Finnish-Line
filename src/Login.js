@@ -1,8 +1,8 @@
 "use strict";
-const messageContainer = document.querySelector("#errormessagecontainer");
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
-const newUserButton = document.querySelector("#newuserbutton");
+// const messageContainer = document.querySelector("#errormessagecontainer");
+// const emailInput = document.querySelector("#email");
+// const passwordInput = document.querySelector("#password");
+// const newUserButton = document.querySelector("#newuserbutton");
 
 class Login {
   constructor() {
@@ -13,10 +13,10 @@ class Login {
     this.newUserButton = document.querySelector("#newuserbutton");
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
-    const email = emailInput.value;
-    const password = passwordInput.value;
+    const email = this.emailInput.value;
+    const password = this.passwordInput.value;
 
     const users = db.getAllUsers();
     console.log(users);
@@ -27,7 +27,7 @@ class Login {
       }
     });
 
-    messageContainer.innerHTML = "";
+    this.messageContainer.innerHTML = "";
     const p = document.createElement("p");
     if (!user) {
       p.textContent = "Email or passsword is incorrect";
@@ -38,12 +38,12 @@ class Login {
       p.textContent = `Hello ${user.name}!`;
     }
 
-    messageContainer.appendChild(p);
-  }
+    this.messageContainer.appendChild(p);
+  };
 
   directNewUser(e) {
     e.preventDefault();
-    location.assign("/signup.html");
+    location.assign("./signup.html");
   }
 }
 
