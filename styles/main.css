@@ -213,6 +213,9 @@ html {
 #hamburgercontainer li {
   list-style: none;
   padding: 20px;
+  text-overflow: clip;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #hamburgercontainer a:hover {
@@ -331,6 +334,7 @@ html {
 /*LOWER IMAGES STYLE BEGINS*/
 
 .homeimagecontainer {
+  background-color: black;
   width: 300px;
   height: 200px;
   margin: 0 auto 30px auto;
@@ -347,45 +351,117 @@ a {
 
 #hic1 {
   background-image: url(../images/f7fed23723e8f63f9ce41ab358c9b38f.jpg);
+  transition: background-image 0.3s;
 }
 #hic1:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic1:hover p {
+  display: none;
+}
+#hic1:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Churches";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 #hic2 {
   background-image: url(../images/97.jpg);
+  transition: background-image 0.3s;
 }
 #hic2:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic2:hover p {
+  display: none;
+}
+#hic2:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Saunas";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 #hic3 {
   background-image: url(../images/moomins.jpg);
+  transition: background-image 0.3s;
 }
 #hic3:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic3:hover p {
+  display: none;
+}
+#hic3:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Childrens activites";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 #hic4 {
   background-image: url(../images/lakes.jpg);
+  transition: background-image 0.3s;
 }
 #hic4:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic4:hover p {
+  display: none;
+}
+#hic4:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Nature activities";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 #hic5 {
   background-image: url(../images/Main\ marimekko.jpg);
+  transition: background-image 0.3s;
 }
 #hic5:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic5:hover p {
+  display: none;
+}
+#hic5:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Design Shops and Studios";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 #hic6 {
   background-image: url(../images/finlandiaVodka.png);
+  transition: background-image 0.3s;
 }
 #hic6:hover {
   background-image: url(../images/black.png);
-  transition: background-image 0.3s 0.1s;
+  transition: background-image 0.3s;
+}
+#hic6:hover p {
+  display: none;
+}
+#hic6:hover::before {
+  transition: all 1s;
+  color: white;
+  content: "Search for Pubs, Bars and Clubs";
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .homeimagecontainer p {
@@ -403,19 +479,22 @@ a {
 /* FOOTER STYLES BEGIN */
 
 #footercontainer {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   margin: 20px auto 0 auto;
+  padding: 20px 10px 10px 10px;
   display: flex;
   justify-self: center;
   justify-content: space-between;
   align-items: center;
   height: 50px;
-  width: 90vw;
+  width: 97vw;
+  -webkit-box-shadow: 0px -5px 29px -22px rgba(210, 105, 30, 1);
+  -moz-box-shadow: 0px -5px 29px -22px rgba(210, 105, 30, 1);
+  box-shadow: 0px -5px 29px -22px rgba(210, 105, 30, 1);
 }
 
-#footercontainer img {
-  width: 45px;
-  height: 45px;
+#footerimages {
+  display: none;
 }
 
 /*FOOTER STYLES END*/
@@ -463,6 +542,8 @@ a {
 }
 
 .eventbutton:hover {
+  border: 1px solid chocolate;
+  border-radius: 6px;
   transition: all 0.6s;
   background-color: chocolate;
   color: white;
@@ -473,7 +554,8 @@ a {
   background-color: chocolate;
   color: white;
   outline: none;
-  border: none;
+  border: 1px solid chocolate;
+  border-radius: 6px;
 }
 
 #searchbutton {
@@ -523,7 +605,6 @@ a {
   align-items: center;
   margin: 20px auto;
   padding-bottom: 15px;
-  border-bottom: 1px solid chocolate;
 }
 
 .resultsitem {
@@ -536,8 +617,11 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   height: 200px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 0px auto;
   width: 300px;
+  border-top: 1px solid chocolate;
+  border-left: 1px solid chocolate;
+  border-right: 1px solid chocolate;
 }
 
 .resultsitem > h3 {
@@ -553,10 +637,55 @@ a {
   margin-bottom: 10px;
 }
 .resultsitemcontainer a {
-  padding: 10px 10px 20px 10px;
+  padding: 10px;
   margin-bottom: 5px;
   color: chocolate;
   text-decoration: none;
+}
+
+.resultsitembelow.closed {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;
+  padding-top: 10px;
+  border-radius: 0 0 6px 6px;
+  border-left: 1px solid chocolate;
+  border-right: 1px solid chocolate;
+  border-bottom: 1px solid chocolate;
+  transition: all 2s;
+}
+
+.resultsitembelow.closed p {
+  display: none;
+}
+
+.resultsitembelow.closed span {
+  display: none;
+}
+
+.resultsitembelow.open {
+  transition: all 2s;
+  border-radius: 0 0 6px 6px;
+  border-left: 1px solid chocolate;
+  border-right: 1px solid chocolate;
+  border-bottom: 1px solid chocolate;
+}
+
+.resultsitembelown.open p {
+  display: block;
+  margin-right: 20px;
+}
+.resultsitembelow.open > div > span {
+  margin-left: 20px;
+  display: block;
+}
+
+.extrainformation {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
 }
 
 /*DASHBOARD SEARCH AREA ENDS*/
@@ -748,7 +877,7 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     height: 200px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 0 auto;
     width: 300px;
   }
 
@@ -768,4 +897,38 @@ a {
   }
 
   /*FAQ PAGE STARTS*/
+
+  #footercontainer img {
+    width: 45px;
+    height: 45px;
+  }
+
+  #footerimages {
+    display: flex;
+    flex-grow: 1;
+    width: 500px;
+    justify-content: space-evenly;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
 }
