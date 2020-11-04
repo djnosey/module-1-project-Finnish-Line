@@ -131,6 +131,7 @@ table {
 html {
   font-size: 16px;
   font-family: "Roboto Mono", monospace;
+  scroll-behavior: smooth;
 }
 
 /*NAVBAR STYLES BEGIN*/
@@ -677,6 +678,37 @@ a:hover {
   transition: height 1s, opacity 5.5s;
 }
 
+#scrollbuttoncontainer.closed {
+  overflow: hidden;
+  opacity: 0;
+  transition: all 2s;
+}
+
+#scrollbuttoncontainer.open {
+  border-radius: 8px;
+  color: white;
+  background-color: chocolate;
+  position: fixed;
+  bottom: 50px;
+  width: 10%;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  z-index: 999;
+  transition: all 2s;
+}
+
+#scrolltotop {
+  background-color: white;
+  font-size: 0.6rem;
+}
+#scrolltotop > a {
+  color: chocolate;
+  opacity: 1;
+}
+
 /*DASHBOARD SEARCH AREA ENDS*/
 
 /*DASHBOARD PAGE SPECIFIC STYLES END*/
@@ -898,26 +930,8 @@ a:hover {
     width: 500px;
     justify-content: space-evenly;
   }
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0);
+  #scrollbuttoncontainer.open {
+    display: none;
   }
 }

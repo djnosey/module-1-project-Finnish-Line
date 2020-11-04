@@ -9,6 +9,8 @@ const placesButton = document.querySelector("#placesbutton");
 const searchButton = document.querySelector("#searchbutton");
 const belowResults = document.querySelectorAll(".resultsitembelow");
 const extraInformation = document.querySelectorAll(".extrainformation");
+const scrollButton = document.querySelector("#scrolltotop");
+const scrollButtonContainer = document.querySelector("#scrollbuttoncontainer");
 
 //////////////////////////////////////////////////////////////////
 
@@ -56,6 +58,23 @@ searchButton.addEventListener("click", function () {
 });
 
 ////////////////////////////////////////////////////////
+//////FUNCTION TO CHECK USER POSITION ON THE PAGE//////
+
+window.addEventListener("scroll", () => {
+  console.log("scrollPosition", scrollPosition);
+});
+
+window.addEventListener("scroll", function () {
+  scrollPosition = window.pageYOffset;
+  if (scrollPosition > 2000) {
+    scrollButtonContainer.classList.remove("closed");
+    scrollButtonContainer.classList.add("open");
+  } else {
+    scrollButtonContainer.classList.remove("open");
+    scrollButtonContainer.classList.add("closed");
+  }
+});
+
 ////////*****FUNCTION TO FETCH THE DATA ******/////////
 
 function fetchData() {
