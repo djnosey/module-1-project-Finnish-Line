@@ -35,7 +35,7 @@ The MVP will include
   - Utilities.js
   - Search.js
   - Login.js
-  - Database.js
+  - Db.js
   - Login.js
   - User.js
   - Validator.js

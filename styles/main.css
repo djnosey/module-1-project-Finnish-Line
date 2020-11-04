@@ -131,6 +131,7 @@ table {
 html {
   font-size: 16px;
   font-family: "Roboto Mono", monospace;
+  scroll-behavior: smooth;
 }
 
 /*NAVBAR STYLES BEGIN*/
@@ -147,6 +148,13 @@ html {
 
 #navbar a {
   color: chocolate;
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+#navbar a:hover {
+  transition: all 0.2s;
+  opacity: 0.4;
 }
 
 #navbar p {
@@ -346,7 +354,13 @@ html {
   background-repeat: no-repeat;
 }
 a {
+  opacity: 1;
   text-decoration: none;
+  transition: all 0.2s;
+}
+a:hover {
+  opacity: 0.5;
+  transition: all 0.2s;
 }
 
 #hic1 {
@@ -544,7 +558,7 @@ a {
 .eventbutton:hover {
   border: 1px solid chocolate;
   border-radius: 6px;
-  transition: all 0.6s;
+  transition: all 0.3s;
   background-color: chocolate;
   color: white;
 }
@@ -563,30 +577,6 @@ a {
   width: 80vw;
   height: 15px;
   padding: 10px;
-}
-
-.searchinput {
-  color: chocolate;
-  border: 0;
-  border-radius: 3px;
-  height: 30px;
-  background-color: rgba(255, 255, 255, 0);
-  border-bottom: 1px solid chocolate;
-  outline: 0;
-  height: 30px;
-  width: 250px;
-  margin: 20px auto;
-}
-
-.searchinput::placeholder {
-  color: chocolate;
-  font-family: "Roboto Mono";
-  font-weight: 400;
-  font-size: 1.2rem;
-}
-#searchinput1::placeholder {
-  color: chocolate;
-  font-size: 1rem;
 }
 
 #searchresultscontainer {
@@ -643,7 +633,7 @@ a {
   text-decoration: none;
 }
 
-.resultsitembelow.closed {
+.resultsitembelow {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -654,38 +644,69 @@ a {
   border-left: 1px solid chocolate;
   border-right: 1px solid chocolate;
   border-bottom: 1px solid chocolate;
-  transition: all 2s;
 }
 
-.resultsitembelow.closed p {
-  display: none;
+.extrainformation.open span {
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: chocolate;
+  color: white;
+  padding: 5px;
 }
 
-.resultsitembelow.closed span {
-  display: none;
-}
-
-.resultsitembelow.open {
-  transition: all 2s;
-  border-radius: 0 0 6px 6px;
-  border-left: 1px solid chocolate;
-  border-right: 1px solid chocolate;
-  border-bottom: 1px solid chocolate;
-}
-
-.resultsitembelown.open p {
-  display: block;
-  margin-right: 20px;
-}
-.resultsitembelow.open > div > span {
-  margin-left: 20px;
-  display: block;
-}
-
-.extrainformation {
+.extrainformation.closed {
+  height: 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 300px;
+  overflow: hidden;
+  transition: all 1s;
+  opacity: 0;
+}
+
+.extrainformation.open {
+  display: flex;
+  font-weight: 400;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  opacity: 1;
+  height: 200px;
+  transition: height 1s, opacity 5.5s;
+}
+
+#scrollbuttoncontainer.closed {
+  overflow: hidden;
+  opacity: 0;
+  transition: all 2s;
+}
+
+#scrollbuttoncontainer.open {
+  border-radius: 8px;
+  color: white;
+  background-color: chocolate;
+  position: fixed;
+  bottom: 50px;
+  width: 10%;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  z-index: 999;
+  transition: all 2s;
+}
+
+#scrolltotop {
+  background-color: white;
+  font-size: 0.6rem;
+}
+#scrolltotop > a {
+  color: chocolate;
+  opacity: 1;
 }
 
 /*DASHBOARD SEARCH AREA ENDS*/
@@ -909,26 +930,8 @@ a {
     width: 500px;
     justify-content: space-evenly;
   }
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0);
+  #scrollbuttoncontainer.open {
+    display: none;
   }
 }
