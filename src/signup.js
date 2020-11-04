@@ -2,7 +2,6 @@
 
 class SignUp {
   constructor() {
-
     this.nameInput = document.querySelector("#name");
     this.emailInput = document.querySelector("#email");
     this.passwordInput = document.querySelector("#password");
@@ -11,7 +10,6 @@ class SignUp {
     this.signUpButton = document.querySelector("#signupbutton");
     this.errorContainer = document.querySelector("#errormessagecontainer");
   }
-
 
   handleEmailInput = (event) => {
     const emailInput = event.target;
@@ -43,6 +41,12 @@ class SignUp {
     this.errorContainer.innerHTML = "";
     const errorsObject = validator.getErrors();
     const errorsArray = Object.values(errorsObject);
+    
+    if (errorsArray.length == 0) {
+      this.signUpButton.disabled = false;
+    } else {
+      this.signUpButton.disabled = true;
+    }
 
     errorsArray.forEach((item) => {
       const p = document.createElement("p");
@@ -61,12 +65,16 @@ class SignUp {
 
     const newUser = new User(name, email, password, repeatedPassword);
 
-    console.log(newUser);
+    setTimeout(() => {
+      location.assign("./dashboard.html");
+    }, 3000);
 
     //save to db >>>>
     db.saveNewUser(newUser);
 
     //clear the form
+    this.errorContainer.innerHTML = "";
+    this.errorContainer.innerHTML = `Hei ${name}, Thanks for signing up to the FInnish Line`;
     this.nameInput.value = "";
     this.emailInput.value = "";
     this.passwordInput.value = "";

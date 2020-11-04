@@ -359,7 +359,6 @@ a {
   transition: all 0.2s;
 }
 a:hover {
-  opacity: 0.5;
   transition: all 0.2s;
 }
 
@@ -566,6 +565,7 @@ a:hover {
 }
 
 .eventbutton {
+  opacity: 1;
   text-align: center;
   background-color: white;
   font-family: "Roboto Mono";
@@ -594,6 +594,11 @@ a:hover {
   outline: none;
   border: 1px solid chocolate;
   border-radius: 6px;
+}
+
+.eventbutton[disabled] {
+  opacity: 0;
+  transition: all 1s;
 }
 
 #searchbutton {
