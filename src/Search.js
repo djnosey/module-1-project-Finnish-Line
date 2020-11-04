@@ -68,8 +68,8 @@ function fetchData() {
     .then((data) => {
       results = data.contents;
       parsedResults = JSON.parse(results).data;
-      console.log(parsedResults);
       places = parsedResults;
+      return Promise.resolve();
     });
   setTimeout(filterResults, 3000);
   setTimeout(function () {
@@ -81,13 +81,11 @@ function fetchData() {
     readmorebutton.forEach((item) =>
       item.addEventListener("click", readMoreFunction)
     );
-    console.log(readmorebutton);
   }, 7000);
   setTimeout(function () {
     searchButton.innerHTML = "Search again";
   }, 10000);
 }
-
 //////////////****************/////////////////////////////////
 
 /* FUNCTION THAT FILTERS OUT RESULTS WITHOUT PICTURE OR TAGS*/
@@ -99,8 +97,11 @@ function filterResults() {
     (item) => item.description.images.length !== 0
   );
   filteredPlaces5 = filteredPlaces4.filter((item) => item.name.en !== null);
-  console.log("filteredPlaces4", filteredPlaces4);
-  filteredPlaces6 = filteredPlaces5.filter();
+  //   filteredPlaces5.forEach((item,index) => {
+  //     let name = item.name.en;
+  //     filteredPlaces6= filteredPlaces5.filter(item => item.name.en != )
+
+  //   })
 }
 ///////////**********************************///////////
 
@@ -168,18 +169,25 @@ function loadingText() {
   searchButton.innerHTML = "Loading your results, just a sec...";
 }
 
+///////***** Function to open and close content cards ****/////////
+
 function readMoreFunction(event) {
   const selectedButton = event.currentTarget;
   const openMe = selectedButton.parentNode;
+  const targetedDiv = openMe.childNodes[2];
+  console.log("targeted div", targetedDiv);
   if (openMe.classList.contains("closed")) {
+    targetedDiv.classList.remove("closed");
+    targetedDiv.classList.add("open");
     selectedButton.innerHTML = "Close";
     openMe.classList.remove("closed");
     openMe.classList.add("open");
   } else {
+    targetedDiv.classList.remove("open");
+    targetedDiv.classList.add("closed");
     selectedButton.innerHTML = "Read more";
     openMe.classList.remove("open");
     openMe.classList.add("closed");
-    console.log(openMe);
   }
 }
 ///////////**********************************///////////
