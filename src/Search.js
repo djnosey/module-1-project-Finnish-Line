@@ -60,10 +60,6 @@ searchButton.addEventListener("click", function () {
 ////////////////////////////////////////////////////////
 //////FUNCTION TO CHECK USER POSITION ON THE PAGE//////
 
-window.addEventListener("scroll", () => {
-  console.log("scrollPosition", scrollPosition);
-});
-
 window.addEventListener("scroll", function () {
   scrollPosition = window.pageYOffset;
   if (scrollPosition > 2000) {
@@ -74,6 +70,8 @@ window.addEventListener("scroll", function () {
     scrollButtonContainer.classList.add("closed");
   }
 });
+
+////////////////////////////////////////////////////////
 
 ////////*****FUNCTION TO FETCH THE DATA ******/////////
 
