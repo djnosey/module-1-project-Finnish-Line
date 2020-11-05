@@ -2,10 +2,10 @@
 
 class Validator {
   constructor() {
-    this.invalidEmailError = "Enter a valid email";
-    this.emailExistsError = "The email address already exists";
-    this.passwordError = "Password should be 6 characters long";
-    this.repeatPasswordError = "The passwords dont match";
+    this.invalidEmailError = "Please enter a valid email";
+    this.emailExistsError = "Uh Oh! This email address already exists";
+    this.passwordError = "Your password should be 6 characters long";
+    this.repeatPasswordError = "The passwords you entered dont match";
 
     this.errors = {
       invalidEmailError: this.invalidEmailError,

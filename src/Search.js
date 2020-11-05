@@ -1,4 +1,5 @@
 let url = ``; //sets fetch url to blank on page load
+let counter = 0; //sets page number for pagination
 
 //QUERY SELECTORS//
 
@@ -11,7 +12,11 @@ const belowResults = document.querySelectorAll(".resultsitembelow");
 const extraInformation = document.querySelectorAll(".extrainformation");
 const scrollButton = document.querySelector("#scrolltotop");
 const scrollButtonContainer = document.querySelector("#scrollbuttoncontainer");
-
+const paginationContainer = document.querySelector(
+  "paginationbuttonscontainer"
+);
+const previousButton = document.querySelector("#previousbutton");
+const nextButton = document.querySelector("#nextbutton");
 //////////////////////////////////////////////////////////////////
 
 /*function to retrieve query from url bar */
@@ -33,7 +38,7 @@ const type = GetURLParameter("type");
 
 if (myQuery) {
   if (myQuery === "all") {
-    url = `http://open-api.myhelsinki.fi/v1/places/?limit=1000`;
+    url = `http://open-api.myhelsinki.fi/v1/places/?limit=30`;
   } else {
     url = `http://open-api.myhelsinki.fi/v1/${type}/?tags_search=` + myQuery;
   }
@@ -45,16 +50,18 @@ if (myQuery) {
 ////////////////** EVENT LISTENERS **/////////////////////
 
 eventsButton.addEventListener("click", () => {
-  url = `http://open-api.myhelsinki.fi/v1/events/?limit=1000`;
+  url = `http://open-api.myhelsinki.fi/v1/events/?limit=100`;
 });
 activitiesButton.addEventListener("click", () => {
-  url = `http://open-api.myhelsinki.fi/v1/activities/?limit=100`;
+  url = `http://open-api.myhelsinki.fi/v1/activities/?limit=30`;
 });
 placesButton.addEventListener("click", () => {
-  url = `http://open-api.myhelsinki.fi/v1/places/?limit=100`;
+  url = `http://open-api.myhelsinki.fi/v1/places/?limit=30`;
+  console.log(url);
 });
 searchButton.addEventListener("click", function () {
   fetchData();
+  counter = 0;
 });
 
 ////////////////////////////////////////////////////////
@@ -208,3 +215,40 @@ function readMoreFunction(event) {
   }
 }
 ///////////**********************************///////////
+////////// Pagination functions ////////////////////
+
+nextButton.addEventListener("click", () => {
+  window.scrollTo(0, 860);
+  counter++;
+  resultsDisplayed = `&start=${counter * 30 + 1}`;
+  console.log(resultsDisplayed);
+  url += resultsDisplayed;
+  fetchData();
+  if (url.includes("places")) {
+    placesButton.click();
+  }
+  if (url.includes("activities")) {
+    activitiesButton.click();
+  }
+  if (url.includes("events")) {
+    eventsButton.click();
+  }
+});
+
+previousButton.addEventListener("click", () => {
+  window.scrollTo(0, 860);
+  counter--;
+  resultsDisplayed = `&start=${counter * 30 + 1}`;
+  console.log(resultsDisplayed);
+  url += resultsDisplayed;
+  fetchData();
+  if (url.includes("places")) {
+    placesButton.click();
+  }
+  if (url.includes("activities")) {
+    activitiesButton.click();
+  }
+  if (url.includes("events")) {
+    eventsButton.click();
+  }
+});
