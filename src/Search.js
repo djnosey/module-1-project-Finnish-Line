@@ -38,7 +38,7 @@ const type = GetURLParameter("type");
 
 if (myQuery) {
   if (myQuery === "all") {
-    url = `http://open-api.myhelsinki.fi/v1/places/?limit=30`;
+    url = `http://open-api.myhelsinki.fi/v1/places/?limit=100`;
   } else {
     url = `http://open-api.myhelsinki.fi/v1/${type}/?tags_search=` + myQuery;
   }
@@ -97,7 +97,6 @@ function fetchData() {
       results = data.contents;
       parsedResults = JSON.parse(results).data;
       places = parsedResults;
-      return Promise.resolve();
     });
   setTimeout(filterResults, 3000);
   setTimeout(function () {
@@ -254,5 +253,3 @@ previousButton.addEventListener("click", () => {
     eventsButton.click();
   }
 });
-
-////////////////////////////////////////////////////////

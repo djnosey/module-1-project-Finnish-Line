@@ -28,11 +28,13 @@ The MVP will include
   - dashboard.html
   - faq.html
   - Login.html
+  - signup.html
 
 - Style/
   - Main.css
+
 - Src/
-  - Utilities.js
+  - Utilities.js 
   - Search.js
   - Login.js
   - Db.js
@@ -41,6 +43,7 @@ The MVP will include
   - Validator.js
   - Signup.js
   - weather.js
+
 - img/
 
 ### API
