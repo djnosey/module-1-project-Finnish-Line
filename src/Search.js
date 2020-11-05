@@ -13,7 +13,7 @@ const extraInformation = document.querySelectorAll(".extrainformation");
 const scrollButton = document.querySelector("#scrolltotop");
 const scrollButtonContainer = document.querySelector("#scrollbuttoncontainer");
 const paginationContainer = document.querySelector(
-  "paginationbuttonscontainer"
+  "#paginationbuttonscontainer"
 );
 const previousButton = document.querySelector("#previousbutton");
 const nextButton = document.querySelector("#nextbutton");
@@ -53,15 +53,19 @@ eventsButton.addEventListener("click", () => {
   url = `http://open-api.myhelsinki.fi/v1/events/?limit=100`;
 });
 activitiesButton.addEventListener("click", () => {
-  url = `http://open-api.myhelsinki.fi/v1/activities/?limit=30`;
+  url = `http://open-api.myhelsinki.fi/v1/activities/?limit=50`;
 });
 placesButton.addEventListener("click", () => {
-  url = `http://open-api.myhelsinki.fi/v1/places/?limit=30`;
+  url = `http://open-api.myhelsinki.fi/v1/places/?limit=50`;
   console.log(url);
 });
 searchButton.addEventListener("click", function () {
   fetchData();
   counter = 0;
+  setTimeout(() => {
+    paginationContainer.classList.remove("closed");
+    paginationContainer.classList.add("open");
+  }, 5000);
 });
 
 ////////////////////////////////////////////////////////
@@ -121,11 +125,6 @@ function filterResults() {
     (item) => item.description.images.length !== 0
   );
   filteredPlaces5 = filteredPlaces4.filter((item) => item.name.en !== null);
-  //   filteredPlaces5.forEach((item,index) => {
-  //     let name = item.name.en;
-  //     filteredPlaces6= filteredPlaces5.filter(item => item.name.en != )
-
-  //   })
 }
 ///////////**********************************///////////
 
@@ -137,7 +136,7 @@ function insertresult() {
   filteredPlaces5.forEach((item) => {
     //create container "box"
     const SingleresultItemContainer = document.createElement("article");
-    //add clas name to it
+    //add class name to it
     SingleresultItemContainer.classList.add("resultsitemcontainer");
 
     //create the "tophalf" image/title div
@@ -156,6 +155,9 @@ function insertresult() {
     const website = document.createElement("a");
     website.innerHTML = "Visit website";
     website.href = item.info_url;
+    const newTab = document.createAttribute("target");
+    newTab.value = "_blank";
+    website.setAttributeNode(newTab);
     //create the button
     const readmore = document.createElement("button");
     readmore.classList.add("eventbutton");
@@ -220,7 +222,7 @@ function readMoreFunction(event) {
 nextButton.addEventListener("click", () => {
   window.scrollTo(0, 860);
   counter++;
-  resultsDisplayed = `&start=${counter * 30 + 1}`;
+  resultsDisplayed = `&start=${counter * 50 + 1}`;
   console.log(resultsDisplayed);
   url += resultsDisplayed;
   fetchData();
@@ -238,7 +240,7 @@ nextButton.addEventListener("click", () => {
 previousButton.addEventListener("click", () => {
   window.scrollTo(0, 860);
   counter--;
-  resultsDisplayed = `&start=${counter * 30 + 1}`;
+  resultsDisplayed = `&start=${counter * 50 + 1}`;
   console.log(resultsDisplayed);
   url += resultsDisplayed;
   fetchData();
@@ -252,3 +254,5 @@ previousButton.addEventListener("click", () => {
     eventsButton.click();
   }
 });
+
+////////////////////////////////////////////////////////
